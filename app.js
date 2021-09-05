@@ -2,4 +2,6 @@ const express = require('express');
 const app = express()
 const port = 3100;
 
-app.get('/', (req, res) => res.send('Welcome!'));
+app.get('/api', (req, res) => res.send('Este mensaje provoene de una API en Express'));
+
+app.listen(port, () => console.log(`Listening on port ${port}!`))
