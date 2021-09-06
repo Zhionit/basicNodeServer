@@ -21,8 +21,8 @@ connection.connect(function(err) {
 
 app.get('/api', (req, res) => {
 	var message = extract_message()
-	console.log(message[0].message)
-	res.send(message[0].message)
+	console.log(message[0])
+	res.send(message[0])
 });
 
 function extract_message(){
