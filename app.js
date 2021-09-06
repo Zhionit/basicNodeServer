@@ -20,6 +20,7 @@ connection.connect(function(err) {
 });
 
 app.get('/api', (req, res) => {
+	console.log(extract_message())
 	res.send(extract_message())}
 );
 
