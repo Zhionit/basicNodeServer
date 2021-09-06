@@ -23,8 +23,9 @@ app.get('/api', (req, res) => {
 	res.send(extract_message())}
 );
 
-function extract_message(){
-	connection.query('SELECT ms.message FROM messages ms where ms.id == 1' , function (error, result, fields) {
+function extract_message(message_id){
+	query_message = 'SELECT ms.message FROM messages ms where ms.id = 1'
+	connection.query(quey_message , function (error, result, fields) {
 		if (error)
 			throw error;
 
