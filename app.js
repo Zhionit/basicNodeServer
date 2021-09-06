@@ -30,7 +30,7 @@ function extract_message(){
 			throw error;
 		}
 
-		console.log(result[0]);
+		console.log(result[0].RowDataPacket);
 		return result[0].RowDataPacket.message;
 	});
 }
