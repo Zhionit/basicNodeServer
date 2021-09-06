@@ -31,7 +31,7 @@ function extract_message(){
 		}
 
 		console.log(result);
-		return result;
+		return result.RowDataPacket.message;
 	});
 }
 
