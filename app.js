@@ -20,7 +20,7 @@ connection.connect(function(err) {
 });
 
 app.get('/api', (req, res) => {
-	var message = extract_message()
+	var message = extract_message()[0].message
 	console.log(message)
 	res.send(message)
 });
@@ -32,8 +32,7 @@ function extract_message(){
 			throw error;
 		}
 
-		console.log(result[0].message);
-		return result[0].message;
+		return result;
 	});
 }
 
