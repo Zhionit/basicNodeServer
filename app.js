@@ -30,8 +30,8 @@ function extract_message(){
 			throw error;
 		}
 
-		console.log(result[0].RowDataPacket);
-		return result[0].RowDataPacket.message;
+		console.log(result[0].message);
+		return result[0].message;
 	});
 }
 
