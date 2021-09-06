@@ -20,12 +20,12 @@ connection.connect(function(err) {
 });
 
 app.get('/api', (req, res) => {
-	var message = extract_message()
+	var message = extract_message(req, res)
 	console.log(message)
 	res.send(message)
 });
 
-function extract_message(){
+extract_message = (r, result) => {
 	return connection.query('SELECT ms.message FROM messages ms where ms.id = 1' , function (error, result, fields) {
 		return result;
 	});
