@@ -34,6 +34,5 @@ app.get('/api', (req, res) => {
             });
         }
     });	
-});
 
 app.listen(port, () => console.log(`Listening on port ${port}!`))
