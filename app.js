@@ -5,7 +5,7 @@ const port = 3100;
 var mysql      = require('mysql');
 var connection = mysql.createConnection({
     host     : 'acamica.cjoqmo3tqsxt.us-east-2.rds.amazonaws.com',
-    database : 'acamica',
+    database : 'Acamica',
     user     : 'admin',
     password : 'password',
 });
