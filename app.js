@@ -20,15 +20,20 @@ connection.connect(function(err) {
 });
 
 app.get('/api', (req, res) => {
-	var message = extract_message(req, res)
-	console.log(message)
-	res.send(message)
+    if(err) throw err;
+        else {
+            connection.query('SELECT ms.message FROM messages ms where ms.id = 1',(err, result) => {
+                if(err) {
+                    console.log(err); 
+                    res.json({"error":true});
+                }
+                else { 
+                    console.log(result); 
+                    res.json(result); 
+                }
+            });
+        }
+    });	
 });
-
-extract_message = (r, result) => {
-	return connection.query('SELECT ms.message FROM messages ms where ms.id = 1' , function (error, result, fields) {
-		return result;
-	});
-}
 
 app.listen(port, () => console.log(`Listening on port ${port}!`))
