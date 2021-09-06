@@ -25,12 +25,13 @@ app.get('/api', (req, res) => {
 
 function extract_message(){
 	return connection.query('SELECT ms.message FROM messages ms where ms.id = 1' , function (error, result, fields) {
-		if (error)
-			console.log(error)
+		if (error) {
+			console.log(error);
 			throw error;
+		}
 
-		console.log(result)
-		return result
+		console.log(result);
+		return result;
 	});
 }
 
